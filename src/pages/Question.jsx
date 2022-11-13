@@ -83,37 +83,10 @@ const Question = () => {
         // }
     }
 
-    // const ClickButtonB = (Num,type) => {
-    //     setquestionNum(questionNum + 1);
-    //     if (dastQu.type === 'JOB') {
-    //         const addScore = totalScore[0].score + Num;
-    //         // 새로운 객체 생성 
-    //         const newObject = {id: "JOB", score: addScore}
-    //         // splice 로 새로운 객체를 해당객체에 넣어줌 
-    //         // 첫번째 인자로 인덱스값 , n번째 요소 , 넣어줄 객체
-    //         totalScore.splice(0, 1, newObject)
-    //     } else if ( type === "EI"){
-    //         const addScore = totalScore[0].score + Num;
-    //         const newObject = {id: "EI", score: addScore}
-    //         totalScore.splice(1, 1, newObject)
-    //     } else if ( type === "SN"){
-    //         const addScore = totalScore[0].score + Num;
-    //         const newObject = {id: "SN", score: addScore}
-    //         totalScore.splice(2, 1, newObject)
-    //     } else if ( type === "TF"){
-    //         const addScore = totalScore[0].score + Num;
-    //         const newObject = {id: "TF", score: addScore}
-    //         totalScore.splice(3, 1, newObject)
-    //     } else {
-    //         const addScore = totalScore[0].score + Num;
-    //         const newObject = {id: "JP", score: addScore}
-    //         totalScore.splice(4, 1, newObject)
-    //     }
-    // }
 
    
     return (
-        <Wrapper>
+        <Wrapper className='Question_Wrapper'>
             {/* ProgressBar가 질문의 진행도 만큼 움직이게 */}
             <ProgressBar striped variant="warning" now={(questionNum) / data.state.question.length * 100} style={{ marginTop: '20px' }} />
             <Title> {dastQu.title} </Title>

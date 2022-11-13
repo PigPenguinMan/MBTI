@@ -9,7 +9,8 @@ const Home = () => {
     }
 
     return (
-        <Wrapper>
+        <Wrapper className="Home_Wrapper">
+            <div className="Home_back">
             <Headers>어울리는 반려동물 찾기</Headers>
             <Contents>
                 <Title> 나에게 맞는 반려동물은 ? </Title>
@@ -21,6 +22,7 @@ const Home = () => {
                 </Desc>
                 <Button onClick={handleClickButton}>테스트 시작하기</Button>
             </Contents>
+            </div>
         </Wrapper>
     );
 }
