@@ -54,7 +54,7 @@ const Question = () => {
             })
             
         }
-        console.log(dastQu.answerA);
+    
 
 
         // 기존 스코어에 더할 값을 계산 (기존의 값 + 배점)
