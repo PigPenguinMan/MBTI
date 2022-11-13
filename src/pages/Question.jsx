@@ -19,41 +19,42 @@ const Question = () => {
     ])
     let dastQu = data.state.question[questionNum];
 
-    const ClickButton = (Num,type) => {
+    const ClickButton = (Num, type) => {
         // totalScore에 map함수로 각각의 요소를 a로 받음
-        const newScore = totalScore.map((a)=>
+        const newScore = totalScore.map((a) =>
             a.id === type ?
-            { id:a.id , score:a.score + Num } 
-            :
-            //  type이 같지않은 경우 기존의 객체 유지
-            a 
+                { id: a.id, score: a.score + Num }
+                :
+                //  type이 같지않은 경우 기존의 객체 유지
+                a
         );
-        setTotalScore(newScore);    
+        setTotalScore(newScore);
         // 다음 문제로 문제수 증가 
         // 마지막문제에서 
-        if(data.state.question.length !== questionNum +1){
-            setquestionNum(questionNum +1);
-        }else {
+        if (data.state.question.length !== questionNum + 1) {
+            setquestionNum(questionNum + 1);
+        } else {
             // MBTI 도출
             // reduce 한번 더 보기
             const mbti = newScore.reduce(
-                (acc, curr) => 
-                    acc + (curr.score >= 2 ? curr.id.substring(0,1):curr.id.substring(1,2)),
-                    ''
+                (acc, curr) =>
+                    acc + (curr.score >= 2 ? curr.id.substring(0, 1) : curr.id.substring(1, 2)),
+                ''
             );
-            console.log('mbti',mbti);
+            console.log('mbti', mbti);
             // 결과 페이지로 이동 
             navigate({
                 // search 사용 
-                pathname:'/Result',
+                pathname: '/Result',
                 // createSeachParam hooks 사용
-                search:`?${createSearchParams({
-                    mbti:mbti,
+                search: `?${createSearchParams({
+                    mbti: mbti,
 
                 })}`
             })
+            
         }
-       
+        console.log(dastQu.answerA);
 
 
         // 기존 스코어에 더할 값을 계산 (기존의 값 + 배점)
@@ -84,24 +85,31 @@ const Question = () => {
     }
 
 
-   
+
     return (
         <Wrapper className='Question_Wrapper'>
-            {/* ProgressBar가 질문의 진행도 만큼 움직이게 */}
-            <ProgressBar striped variant="warning" now={(questionNum) / data.state.question.length * 100} style={{ marginTop: '20px' }} />
-            <Title> {dastQu.title} </Title>
-            <ButtonGroup>
-                <Button
-                    onClick={() => ClickButton(1,dastQu.type)}
-                    style={{ width: "40%", minHeight: '150px', fontSize: '15pt' }}>
-                    {dastQu.answerA}
-                </Button>
-                <Button
-                    onClick={() => ClickButton(0,dastQu.type)}
-                    style={{ width: "40%", minHeight: '150px', fontSize: '15pt', marginLeft: '20px' }}>
-                    {dastQu.answerB}
-                </Button>
-            </ButtonGroup>
+                {/* ProgressBar가 질문의 진행도 만큼 움직이게 */}
+            <div className='Question_outer'>
+                <ProgressBar striped variant="warning"  now={(questionNum) / data.state.question.length * 100} style={{ marginTop: '20px' }} />
+                <div className='Question_inner'>
+                <Title> {dastQu.title} </Title>
+                <Image></Image>
+                <ButtonGroup>
+                    <Button
+                        variant="light"
+                        onClick={() => ClickButton(1, dastQu.type)}
+                        style={{ width: "40%", minHeight: '150px', fontSize: '15pt'  }}>
+                        {dastQu.answerA}
+                    </Button>
+                    <Button
+                        variant='light'
+                        onClick={() => ClickButton(0, dastQu.type)}
+                        style={{ width: "40%", minHeight: '150px', fontSize: '15pt', marginLeft: '20px'}}>
+                        {dastQu.answerB}
+                    </Button>
+                </ButtonGroup>
+                </div>
+            </div>
         </Wrapper>
     );
 }
@@ -110,11 +118,16 @@ export default Question;
 const Wrapper = styled.div`
     height:100vh; 
     width: 100%;
-    color: white;   
+      
 `
 const Title = styled.div`
     font-size : 1.5em;
     text-align : center ; 
+    padding-top : 20px
+`
+const Image = styled.div`
+    width:50%;
+    min-height:400px;
 `
 const ButtonGroup = styled.div`
     display: flex;

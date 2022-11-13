@@ -26,11 +26,10 @@ const DataContext = createContext();
 
 const DataProvider = (({children}) => {
     const [question, setQuestion] = useState([
-     
         {
             questionId: 1,
-            title: '당신은 반려동물을 키우게 됐습니다, 가장 먼저 하고 싶은 일은 ?',
-            answerA: '남는건 사진뿐이야! 사진찍어서 인스타에 올려야지',
+            title: `당신은 반려동물을 키우게 됐습니다. 가장 먼저 하고 싶은 일은 ?`,
+            answerA: `남는건 사진뿐이야! 사진찍어서 인스타에 올려야지`,
             answerB: '집에 처음왔는데 적응할시간은 줘야지. 그냥 눈으로 보고 있는다',
             type: 'EI'
         },
@@ -96,121 +95,115 @@ const DataProvider = (({children}) => {
             id: 1,
             name:'거북이',
             best:'ISTJ',
-            desc:`한번 시작한 일은 끝까지 해내는 ISTJ${<br/>} 거북이`,
+            desc:`한번 시작한 일은 끝까지 해내는 ISTJ `,
             image:`${turtle}`            
         },
         {
             id: 2,
             name:'비숑',
             best:'ISFJ',
-            desc:`성실하고 온화하며 협조를 잘하는 ISFJ ${<br/>} 비숑 `,
+            desc:`성실하고 온화하며 협조를 잘하는 ISFJ  `,
             image:`${bichon}`            
         },
         {
             id: 3,
             name:'뱀',
             best:'ISTP',
-            desc:`논리적이고 뛰어난 상황적응력을 가진 ISTP ${<br/>} 뱀`,
+            desc:`논리적이고 뛰어난 상황적응력을 가진 ISTP  `,
             image:`${snake}`            
         },
         {
             id: 4,
             name:'토끼',
             best:'ISFP',
-            desc:`따뜻한 감성을 가지고 있는 겸손한 ISFP${<br/>} 토끼`,
+            desc:`따뜻한 감성을 가지고 있는 겸손한 ISFP `,
             image:`${bunny}`            
         },
         {
             id: 5,
             name:'러시안 블루',
             best:'INFJ',
-            desc:`사람과 관련된 뛰어난 통찰력을 가진 INFJ${<br/>} 러시안블루`,
+            desc:`사람과 관련된 뛰어난 통찰력을 가진 INFJ`,
             image:`${russianBlue}`            
         },
         {
             id: 6,
             name:'라쿤',
             best:'INTJ',
-            desc:`전체적인 부분을 조합하여 비전을 제시하는 INTJ${<br/>} 라쿤`,
+            desc:`전체적인 부분을 조합하여 비전을 제시하는 INTJ`,
             image:`${raccoon}`            
         },
         {
             id: 7,
             name:'여우',
             best:'INFP',
-            desc:`이상적인 세상을 만들어가는 INFP${<br/>} 여우`,
+            desc:`이상적인 세상을 만들어가는 INFP`,
             image:`${fox}`            
         },
         {
             id: 8,
             name:'고슴도치',
             best:'INTP',
-            desc:`비평적인 관점을 가지고 있는 뛰어난 전력가 INTP${<br/>} 고슴도치`,
+            desc:`비평적인 관점을 가지고 있는 뛰어난 전력가 INTP`,
             image:`${hedgehog}`            
         },
         {
             id: 9,
             name:'보더콜리',
             best:'ESTP',
-            desc:`친구,운동,음식 다양한 활동을 좋아하는 ESTP${<br/>} 보더콜리`,
+            desc:`친구,운동,음식 다양한 활동을 좋아하는 ESTP`,
             image:`${borderCollie}`            
         },
         {
             id: 10,
             name:'웰시코기',
             best:'ESFP',
-            desc:`분위기를 고조시키는 우호적인 ESFP${<br/>} 웰시코기`,
+            desc:`분위기를 고조시키는 우호적인 ESFP`,
             image:`${welshCorgi}`            
         },
         {
             id: 11,
             name:'물고기',
             best:'ESTJ',
-            desc:`사무적,실용적,현실적으로 일을 많이하는 ESTJ${<br/>} 물고기`,
+            desc:`사무적,실용적,현실적으로 일을 많이하는 ESTJ`,
             image:`${fish}`            
         },
         {
             id: 12,
             name:'모든 동물',
             best:'ESFJ',
-            desc:`친절과 현실감을 바탕으로 타인에게 봉사하는 ESFJ${<br/>} 모든 동물`,
+            desc:`친절과 현실감을 바탕으로 타인에게 봉사하는 ESFJ`,
             image:`${animal}`            
         },
         {
             id: 13,
             name:'친칠라',
             best:'ENFP',
-            desc:`열정적으로 새로운 관계를 만드는 ENFP${<br/>} 친칠라`,
+            desc:`열정적으로 새로운 관계를 만드는 ENFP`,
             image:`${chinchilla}`            
         },
         {
             id: 14,
             name:'카멜레온',
             best:'ENTP',
-            desc:`풍부한 상상력을 가지고 새로운것에 도전하는 ENTP${<br/>} 카멜레온`,
+            desc:`풍부한 상상력을 가지고 새로운것에 도전하는 ENTP`,
             image:`${chameleon}`            
         },
         {
             id: 15,
             name:'리트리버',
             best:'ENFJ',
-            desc:`타인의 성장을 도모하고 협동하는 ENFJ${<br/>} 리트리버`,
+            desc:`타인의 성장을 도모하고 협동하는 ENFJ`,
             image:`${retriver}`            
         },
         {
             id: 16,
             name:'미어캣',
             best:'ENTJ',
-            desc:`비전을 가지고 사람들을 활력적으로 이끌어가는 ENTJ${<br/>} 미어캣 `,
+            desc:`비전을 가지고 사람들을 활력적으로 이끌어가는 ENTJ`,
             image:`${meerkat}`            
         },
-        {
-            id: 17,
-            name:'돌',
-            best:'none',
-            desc:`일 때문에 너무 바쁜 당신 ${<br/>} 돌`,
-            image:`${rock}`            
-        },
+       
     ])
     const value = {
         state: { question,result },

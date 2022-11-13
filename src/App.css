@@ -1,13 +1,33 @@
 @import url('https://webfontworld.github.io/NexonMabinogi/MabinogiClassic.css');
 
 
-.Home_Wrapper ,.Question_Wrapper {
-  background-color: rgb(49, 79, 79);
+.Home_Wrapper ,.Question_Wrapper,.Result_Wrapper {
+  background-color:#004b49;
   font-family: 'MabinogiClassic';
+  text-align: center;
 }
 
-.Home_back {
+.Home_inner,.Result_outer  {
   position: relative;
-  top: 5%;
-  background-color: white;
+  display: inline-block;
+  height: 100%;
+  background-color:white;
+  padding: 20px;
+}
+
+.Question_outer {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  background-color:rgb;
+  padding: 20px;
+}
+
+.Question_inner {
+  position: relative;
+  margin-top: 30px;
+  background-color: #cd8735;
+  min-height: 710px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 8px rgba(233, 144, 11, 0.658);
 }

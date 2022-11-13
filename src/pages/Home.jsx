@@ -10,7 +10,7 @@ const Home = () => {
 
     return (
         <Wrapper className="Home_Wrapper">
-            <div className="Home_back">
+            <div className="Home_inner">
             <Headers>어울리는 반려동물 찾기</Headers>
             <Contents>
                 <Title> 나에게 맞는 반려동물은 ? </Title>
@@ -20,7 +20,7 @@ const Home = () => {
                 <Desc>
                     MBTI를 기반으로하는 나랑 잘맞는 반려동물 찾기
                 </Desc>
-                <Button onClick={handleClickButton}>테스트 시작하기</Button>
+                <Button variant="outline-dark" className="mt-5" onClick={handleClickButton}>테스트 시작하기</Button>
             </Contents>
             </div>
         </Wrapper>
@@ -56,9 +56,11 @@ const Title = styled.div`
 `
 const LogoImage = styled.div`
     margin-top : 10px;
+    padding : 40px 0;
 `
 const Desc = styled.div`
     font-size : 1.5em;
-    margin-top : 20px;
+    margin-top : 20px
+    padding-bottom;
     
 `
