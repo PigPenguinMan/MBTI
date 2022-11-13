@@ -3,7 +3,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import { Button } from 'react-bootstrap';
 import { useContext } from 'react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { createSearchParams, useNavigate } from 'react-router-dom';
 import DataContext from '../Context/DataContext';
 
 
@@ -12,7 +12,6 @@ const Question = () => {
     const [questionNum, setquestionNum] = useState(0)
     const navigate = useNavigate();
     const [totalScore, setTotalScore] = useState([
-        { id: 'JOB', score: 0 },
         { id: 'EI', score: 0 },
         { id: 'SN', score: 0 },
         { id: 'TF', score: 0 },
@@ -35,10 +34,26 @@ const Question = () => {
         if(data.state.question.length !== questionNum +1){
             setquestionNum(questionNum +1);
         }else {
+            // MBTI 도출
+            // reduce 한번 더 보기
+            const mbti = newScore.reduce(
+                (acc, curr) => 
+                    acc + (curr.score >= 2 ? curr.id.substring(0,1):curr.id.substring(1,2)),
+                    ''
+            );
+            console.log('mbti',mbti);
             // 결과 페이지로 이동 
-            navigate('/Result')
+            navigate({
+                // search 사용 
+                pathname:'/Result',
+                // createSeachParam hooks 사용
+                search:`?${createSearchParams({
+                    mbti:mbti,
+
+                })}`
+            })
         }
-        console.log('newScore', newScore);
+       
 
 
         // 기존 스코어에 더할 값을 계산 (기존의 값 + 배점)

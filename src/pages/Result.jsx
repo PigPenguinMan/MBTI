@@ -1,22 +1,36 @@
 import styled from "styled-components";
 import Logo from "../image/logo.png"
 import Button from "react-bootstrap/Button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import DataContext from "../Context/DataContext";
+
 
 
 const Result = () => {
+    const data = useContext(DataContext);
+    const navigate =useNavigate();
+    const [SearchParams] = useSearchParams();
+    const mbti = SearchParams.get('mbti')
+
+    // 최종적으로 도출한 결과 객체
+    const [resultData,setResultData] = useState({})
+    useEffect(()=>{
+        const result = data.state.result.find((s)=>s.best === mbti);
+        setResultData(result)
+    },[mbti])  
     return ( 
         <Wrapper>
             <Headers>어울리는 반려동물 찾기</Headers>
             <Contents>
                 <Title>결과 보기</Title>
                 <LogoImage>
-                    <img  width={350} height={350} className="rounded-cricle" />
+                    <img src={resultData.image} width={350} height={350} className="rounded-cricle" />
                 </LogoImage>
                 <Desc>
-                    당신과 잘 어울리는 반려동물은 ? XXX입니다
+                    당신과 잘 어울리는 반려동물은 ? {resultData.name}입니다
                 </Desc>
-                <Button >테스트 다시하기</Button>
+                <Button onClick={()=>navigate('/')}>테스트 다시하기</Button >
             </Contents>
         </Wrapper>
      );
