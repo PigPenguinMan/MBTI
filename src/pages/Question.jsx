@@ -92,19 +92,19 @@ const Question = () => {
             <div className='Question_outer'>
                 <ProgressBar striped variant="warning"  now={(questionNum) / data.state.question.length * 100} style={{ marginTop: '20px' }} />
                 <div className='Question_inner'>
-                <Title> {dastQu.title} </Title>
+                <Title className='Question_title'> {dastQu.title} </Title>
                 <Image></Image>
                 <ButtonGroup>
                     <Button
                         variant="light"
                         onClick={() => ClickButton(1, dastQu.type)}
-                        style={{ width: "40%", minHeight: '150px', fontSize: '15pt'  }}>
+                        style={{ width: "40%", minHeight: '150px', fontSize: '13pt'  }}>
                         {dastQu.answerA}
                     </Button>
                     <Button
                         variant='light'
                         onClick={() => ClickButton(0, dastQu.type)}
-                        style={{ width: "40%", minHeight: '150px', fontSize: '15pt', marginLeft: '20px'}}>
+                        style={{ width: "40%", minHeight: '150px', fontSize: '13pt', marginLeft: '20px'}}>
                         {dastQu.answerB}
                     </Button>
                 </ButtonGroup>

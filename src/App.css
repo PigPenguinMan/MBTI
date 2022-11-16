@@ -2,7 +2,7 @@
 
 
 .Home_Wrapper ,.Question_Wrapper,.Result_Wrapper {
-  background-color:#004b49;
+  background-color:#245245;
   font-family: 'MabinogiClassic';
   text-align: center;
 }
@@ -19,15 +19,20 @@
   position: relative;
   display: inline-block;
   height: 100%;
-  background-color:rgb;
-  padding: 20px;
+  background-color:#5E4225;
+  padding: 10px;
+  border-radius: 20px;
+  min-width: 776px;
+  max-width: 777px;;
 }
 
 .Question_inner {
   position: relative;
-  margin-top: 30px;
+  margin-top: 20px;
   background-color: #cd8735;
   min-height: 710px;
   border-radius: 20px;
-  box-shadow: 3px 3px 8px rgba(233, 144, 11, 0.658);
+  /* box-shadow: 3px 3px 8px rgba(233, 144, 11, 0.658); */
+  white-space: pre-wrap;
+  
 }
