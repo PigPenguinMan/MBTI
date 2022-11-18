@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MBTI/static/css/main.deaa74de.css",
-    "main.js": "/MBTI/static/js/main.1021050e.js",
+    "main.css": "/MBTI/static/css/main.4ce0bb6d.css",
+    "main.js": "/MBTI/static/js/main.aff77e48.js",
     "static/js/787.71719e3a.chunk.js": "/MBTI/static/js/787.71719e3a.chunk.js",
     "static/media/bunny.jpg": "/MBTI/static/media/bunny.a567927d3e4b9a64c4d1.jpg",
     "static/media/chinchilla.jpg": "/MBTI/static/media/chinchilla.78b0da7ab88265de45a6.jpg",
@@ -22,12 +22,12 @@
     "static/media/logo.png": "/MBTI/static/media/logo.ebe953ef969cc104bad6.png",
     "static/media/raccoon.jpg": "/MBTI/static/media/raccoon.56e9438570efed674bd4.jpg",
     "index.html": "/MBTI/index.html",
-    "main.deaa74de.css.map": "/MBTI/static/css/main.deaa74de.css.map",
-    "main.1021050e.js.map": "/MBTI/static/js/main.1021050e.js.map",
+    "main.4ce0bb6d.css.map": "/MBTI/static/css/main.4ce0bb6d.css.map",
+    "main.aff77e48.js.map": "/MBTI/static/js/main.aff77e48.js.map",
     "787.71719e3a.chunk.js.map": "/MBTI/static/js/787.71719e3a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.deaa74de.css",
-    "static/js/main.1021050e.js"
+    "static/css/main.4ce0bb6d.css",
+    "static/js/main.aff77e48.js"
   ]
 }
